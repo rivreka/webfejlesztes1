@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="hu">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,12 +16,14 @@
         <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
             <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="./index.html">Infós Réka</a>
             
-            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="navbar-nav">
                 <div class="nav-item text-nowrap">
-                    <a class="nav-link px-3" href="#">2022.04.21. 20:24</a>
+                    <a class="nav-link px-3" href="#">
+                        2022.04.21. 20:24
+                        <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </a>
                 </div>
             </div>
         </header>
@@ -89,11 +91,122 @@
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h1 class="h2">1. feladat</h1>
                     </div>
+                    <div class="row">
+                        <div class="col-3 mb-4">
+                            <input class="form-control" type="text" placeholder="a (egész szám)" id="feladat_1_a">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <input class="form-control" type="text" placeholder="b (egész szám)" id="feladat_1_b">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 mb-4 text-end">
+                            a + b=
+                        </div>
+                        <div class="col-3 mb-4">
+                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_1">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 mb-4 text-end">
+                            a - b=
+                        </div>
+                        <div class="col-3 mb-4">
+                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_2">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 mb-4 text-end">
+                            a * b=
+                        </div>
+                        <div class="col-3 mb-4">
+                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_3">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 mb-4 text-end">
+                            a / b=
+                        </div>
+                        <div class="col-3 mb-4">
+                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 mb-4 text-end">
+                            a % b=
+                        </div>
+                        <div class="col-3 mb-4">
+                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_5">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 mb-4 text-end">
+                            b / a=
+                        </div>
+                        <div class="col-3 mb-4">
+                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_6">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 mb-4 text-end">
+                            b % a=
+                        </div>
+                        <div class="col-3 mb-4">
+                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_7">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 mb-4 text-end">
+                            a ^ b=
+                        </div>
+                        <div class="col-3 mb-4">
+                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_8">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 mb-4 text-end">
+                            b ^ a=
+                        </div>
+                        <div class="col-3 mb-4">
+                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_9">
+                        </div>
+                    </div>
                 </main>
             </div>
         </div>
         
         
         <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script>
+            let feladat_1_a = document.getElementById('feladat_1_a');
+            let feladat_1_b = document.getElementById('feladat_1_b');
+            let feladat_1_eredmeny_1 = document.getElementById('feladat_1_eredmeny_1');
+            let feladat_1_eredmeny_2 = document.getElementById('feladat_1_eredmeny_2');
+            let feladat_1_eredmeny_3 = document.getElementById('feladat_1_eredmeny_3');
+            let feladat_1_eredmeny_4 = document.getElementById('feladat_1_eredmeny_4');
+            let feladat_1_eredmeny_5 = document.getElementById('feladat_1_eredmeny_5');
+            let feladat_1_eredmeny_6 = document.getElementById('feladat_1_eredmeny_6');
+            let feladat_1_eredmeny_7 = document.getElementById('feladat_1_eredmeny_7');
+            let feladat_1_eredmeny_8 = document.getElementById('feladat_1_eredmeny_8');
+            let feladat_1_eredmeny_9 = document.getElementById('feladat_1_eredmeny_9');
+           
+            feladat_1_a.addEventListener('keyup', feladat_1_szamolas);
+            feladat_1_b.addEventListener('keyup', feladat_1_szamolas);
+            
+            function feladat_1_szamolas() {
+                if(feladat_1_a.value && feladat_1_b.value) {
+                    feladat_1_eredmeny_1.value = (parseInt(feladat_1_a.value) + parseInt(feladat_1_b.value));
+                    feladat_1_eredmeny_2.value = (parseInt(feladat_1_a.value) - parseInt(feladat_1_b.value));
+                    feladat_1_eredmeny_3.value = (parseInt(feladat_1_a.value) * parseInt(feladat_1_b.value));
+                    feladat_1_eredmeny_4.value = (parseInt(feladat_1_a.value) / parseInt(feladat_1_b.value));
+                    feladat_1_eredmeny_5.value = (parseInt(feladat_1_a.value) % parseInt(feladat_1_b.value));
+                    feladat_1_eredmeny_6.value = (parseInt(feladat_1_b.value) / parseInt(feladat_1_a.value));
+                    feladat_1_eredmeny_7.value = (parseInt(feladat_1_b.value) % parseInt(feladat_1_a.value));
+                    feladat_1_eredmeny_8.value = (parseInt(feladat_1_a.value) ** parseInt(feladat_1_b.value));
+                    feladat_1_eredmeny_9.value = (parseInt(feladat_1_b.value) ** parseInt(feladat_1_a.value));
+                }
+
+            }
+        </script>
     </body>
 </html>
