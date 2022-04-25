@@ -19,7 +19,7 @@
             <div class="navbar-nav">
                 <div class="nav-item text-nowrap">
                     <a class="nav-link px-3" href="#">
-                        2022.04.21. 20:24
+                        <span id="clock">2022.04.25. 13:47</span>
                         <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -178,35 +178,49 @@
         
         <script src="assets/js/bootstrap.bundle.min.js"></script>
         <script>
-            let feladat_1_a = document.getElementById('feladat_1_a');
-            let feladat_1_b = document.getElementById('feladat_1_b');
-            let feladat_1_eredmeny_1 = document.getElementById('feladat_1_eredmeny_1');
-            let feladat_1_eredmeny_2 = document.getElementById('feladat_1_eredmeny_2');
-            let feladat_1_eredmeny_3 = document.getElementById('feladat_1_eredmeny_3');
-            let feladat_1_eredmeny_4 = document.getElementById('feladat_1_eredmeny_4');
-            let feladat_1_eredmeny_5 = document.getElementById('feladat_1_eredmeny_5');
-            let feladat_1_eredmeny_6 = document.getElementById('feladat_1_eredmeny_6');
-            let feladat_1_eredmeny_7 = document.getElementById('feladat_1_eredmeny_7');
-            let feladat_1_eredmeny_8 = document.getElementById('feladat_1_eredmeny_8');
-            let feladat_1_eredmeny_9 = document.getElementById('feladat_1_eredmeny_9');
-           
-            feladat_1_a.addEventListener('keyup', feladat_1_szamolas);
-            feladat_1_b.addEventListener('keyup', feladat_1_szamolas);
+            function feladat_1() {
+                let feladat_1_a = document.getElementById('feladat_1_a');
+                let feladat_1_b = document.getElementById('feladat_1_b');
+                let feladat_1_eredmeny_1 = document.getElementById('feladat_1_eredmeny_1');
+                let feladat_1_eredmeny_2 = document.getElementById('feladat_1_eredmeny_2');
+                let feladat_1_eredmeny_3 = document.getElementById('feladat_1_eredmeny_3');
+                let feladat_1_eredmeny_4 = document.getElementById('feladat_1_eredmeny_4');
+                let feladat_1_eredmeny_5 = document.getElementById('feladat_1_eredmeny_5');
+                let feladat_1_eredmeny_6 = document.getElementById('feladat_1_eredmeny_6');
+                let feladat_1_eredmeny_7 = document.getElementById('feladat_1_eredmeny_7');
+                let feladat_1_eredmeny_8 = document.getElementById('feladat_1_eredmeny_8');
+                let feladat_1_eredmeny_9 = document.getElementById('feladat_1_eredmeny_9');
             
-            function feladat_1_szamolas() {
-                if(feladat_1_a.value && feladat_1_b.value) {
-                    feladat_1_eredmeny_1.value = (parseInt(feladat_1_a.value) + parseInt(feladat_1_b.value));
-                    feladat_1_eredmeny_2.value = (parseInt(feladat_1_a.value) - parseInt(feladat_1_b.value));
-                    feladat_1_eredmeny_3.value = (parseInt(feladat_1_a.value) * parseInt(feladat_1_b.value));
-                    feladat_1_eredmeny_4.value = (parseInt(feladat_1_a.value) / parseInt(feladat_1_b.value));
-                    feladat_1_eredmeny_5.value = (parseInt(feladat_1_a.value) % parseInt(feladat_1_b.value));
-                    feladat_1_eredmeny_6.value = (parseInt(feladat_1_b.value) / parseInt(feladat_1_a.value));
-                    feladat_1_eredmeny_7.value = (parseInt(feladat_1_b.value) % parseInt(feladat_1_a.value));
-                    feladat_1_eredmeny_8.value = (parseInt(feladat_1_a.value) ** parseInt(feladat_1_b.value));
-                    feladat_1_eredmeny_9.value = (parseInt(feladat_1_b.value) ** parseInt(feladat_1_a.value));
+                feladat_1_a.addEventListener('keyup', feladat_1_szamolas);
+                feladat_1_b.addEventListener('keyup', feladat_1_szamolas);
+                
+                function feladat_1_szamolas() {
+                    if(feladat_1_a.value && feladat_1_b.value) {
+                        feladat_1_eredmeny_1.value = (parseInt(feladat_1_a.value) + parseInt(feladat_1_b.value));
+                        feladat_1_eredmeny_2.value = (parseInt(feladat_1_a.value) - parseInt(feladat_1_b.value));
+                        feladat_1_eredmeny_3.value = (parseInt(feladat_1_a.value) * parseInt(feladat_1_b.value));
+                        feladat_1_eredmeny_4.value = (parseInt(feladat_1_a.value) / parseInt(feladat_1_b.value));
+                        feladat_1_eredmeny_5.value = (parseInt(feladat_1_a.value) % parseInt(feladat_1_b.value));
+                        feladat_1_eredmeny_6.value = (parseInt(feladat_1_b.value) / parseInt(feladat_1_a.value));
+                        feladat_1_eredmeny_7.value = (parseInt(feladat_1_b.value) % parseInt(feladat_1_a.value));
+                        feladat_1_eredmeny_8.value = (parseInt(feladat_1_a.value) ** parseInt(feladat_1_b.value));
+                        feladat_1_eredmeny_9.value = (parseInt(feladat_1_b.value) ** parseInt(feladat_1_a.value));
+                    }
                 }
-
             }
+
+
+            function init_clock() {
+                let clock = document.getElementById('clock');
+                let time = new Date();
+                clock.innerHTML = `${time.getFullYear()}. ${time.getUTCMonth()+1}. ${time.getDate()}. 
+                ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`;
+                setTimeout(init_clock, 1000);
+            }
+
+
+            init_clock();
+            feladat_1();
         </script>
     </body>
 </html>
