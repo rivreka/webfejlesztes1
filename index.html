@@ -35,49 +35,49 @@
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">
+                                <a class="nav-link active menu_item" href="#" data-menu="1">
                                 <span data-feather="home"></span>
                                 1. gomb
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link menu_item" href="#" data-menu="2">
                                 <span data-feather="file"></span>
                                 2. gomb
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link menu_item" href="#" data-menu="3">
                                 <span data-feather="shopping-cart"></span>
                                 3. gomb
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link menu_item" href="#" data-menu="4">
                                 <span data-feather="users"></span>
                                 4. gomb
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link menu_item" href="#" data-menu="5">
                                 <span data-feather="bar-chart-2"></span>
                                 5. gomb
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link menu_item" href="#" data-menu="6">
                                 <span data-feather="layers"></span>
                                 6. gomb
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link menu_item" href="#" data-menu="7">
                                 <span data-feather="file-text"></span>
                                 7. gomb
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link menu_item" href="#" data-menu="8">
                                 <span data-feather="file-text"></span>
                                 8. gomb
                                 </a>
@@ -88,89 +88,140 @@
 
 
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">1. feladat</h1>
-                    </div>
-                    <div class="row">
-                        <div class="col-3 mb-4">
-                            <input class="form-control" type="text" placeholder="a (egész szám)" id="feladat_1_a">
+                    <section class="section section_1">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">1. feladat</h1>
                         </div>
-                        <div class="col-3 mb-4">
-                            <input class="form-control" type="text" placeholder="b (egész szám)" id="feladat_1_b">
+                        <div class="row">
+                            <div class="col-3 mb-4">
+                                <input class="form-control" type="text" placeholder="a (egész szám)" id="feladat_1_a">
+                            </div>
+                            <div class="col-3 mb-4">
+                                <input class="form-control" type="text" placeholder="b (egész szám)" id="feladat_1_b">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3 mb-4 text-end">
-                            a + b=
+                        <div class="row">
+                            <div class="col-3 mb-4 text-end">
+                                a + b=
+                            </div>
+                            <div class="col-3 mb-4">
+                                <input class="form-control" type="text" readonly id="feladat_1_eredmeny_1">
+                            </div>
                         </div>
-                        <div class="col-3 mb-4">
-                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_1">
+                        <div class="row">
+                            <div class="col-3 mb-4 text-end">
+                                a - b=
+                            </div>
+                            <div class="col-3 mb-4">
+                                <input class="form-control" type="text" readonly id="feladat_1_eredmeny_2">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3 mb-4 text-end">
-                            a - b=
+                        <div class="row">
+                            <div class="col-3 mb-4 text-end">
+                                a * b=
+                            </div>
+                            <div class="col-3 mb-4">
+                                <input class="form-control" type="text" readonly id="feladat_1_eredmeny_3">
+                            </div>
                         </div>
-                        <div class="col-3 mb-4">
-                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_2">
+                        <div class="row">
+                            <div class="col-3 mb-4 text-end">
+                                a / b=
+                            </div>
+                            <div class="col-3 mb-4">
+                                <input class="form-control" type="text" readonly id="feladat_1_eredmeny_4">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3 mb-4 text-end">
-                            a * b=
+                        <div class="row">
+                            <div class="col-3 mb-4 text-end">
+                                a % b=
+                            </div>
+                            <div class="col-3 mb-4">
+                                <input class="form-control" type="text" readonly id="feladat_1_eredmeny_5">
+                            </div>
                         </div>
-                        <div class="col-3 mb-4">
-                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_3">
+                        <div class="row">
+                            <div class="col-3 mb-4 text-end">
+                                b / a=
+                            </div>
+                            <div class="col-3 mb-4">
+                                <input class="form-control" type="text" readonly id="feladat_1_eredmeny_6">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3 mb-4 text-end">
-                            a / b=
+                        <div class="row">
+                            <div class="col-3 mb-4 text-end">
+                                b % a=
+                            </div>
+                            <div class="col-3 mb-4">
+                                <input class="form-control" type="text" readonly id="feladat_1_eredmeny_7">
+                            </div>
                         </div>
-                        <div class="col-3 mb-4">
-                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_4">
+                        <div class="row">
+                            <div class="col-3 mb-4 text-end">
+                                a ^ b=
+                            </div>
+                            <div class="col-3 mb-4">
+                                <input class="form-control" type="text" readonly id="feladat_1_eredmeny_8">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3 mb-4 text-end">
-                            a % b=
+                        <div class="row">
+                            <div class="col-3 mb-4 text-end">
+                                b ^ a=
+                            </div>
+                            <div class="col-3 mb-4">
+                                <input class="form-control" type="text" readonly id="feladat_1_eredmeny_9">
+                            </div>
                         </div>
-                        <div class="col-3 mb-4">
-                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_5">
+                    </section>
+
+
+                    <section class="section section_2" style="display: none">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">2. feladat</h1>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3 mb-4 text-end">
-                            b / a=
+                    </section>
+
+
+                    <section class="section section_3" style="display: none">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">3. feladat</h1>
                         </div>
-                        <div class="col-3 mb-4">
-                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_6">
+                    </section>
+
+
+                    <section class="section section_4" style="display: none">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">4. feladat</h1>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3 mb-4 text-end">
-                            b % a=
+                    </section>
+
+
+                    <section class="section section_5" style="display: none">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">5. feladat</h1>
                         </div>
-                        <div class="col-3 mb-4">
-                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_7">
+                    </section>
+
+
+                    <section class="section section_6" style="display: none">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">6. feladat</h1>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3 mb-4 text-end">
-                            a ^ b=
+                    </section>
+
+
+                    <section class="section section_7" style="display: none">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">7. feladat</h1>
                         </div>
-                        <div class="col-3 mb-4">
-                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_8">
+                    </section>
+
+
+                    <section class="section section_8" style="display: none">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">8. feladat</h1>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3 mb-4 text-end">
-                            b ^ a=
-                        </div>
-                        <div class="col-3 mb-4">
-                            <input class="form-control" type="text" readonly id="feladat_1_eredmeny_9">
-                        </div>
-                    </div>
+                    </section>
                 </main>
             </div>
         </div>
@@ -178,6 +229,35 @@
         
         <script src="assets/js/bootstrap.bundle.min.js"></script>
         <script>
+            function init_clock() {
+                let clock = document.getElementById('clock');
+                let time = new Date();
+                clock.innerHTML = `${time.getFullYear()}. ${time.getUTCMonth()+1}. ${time.getDate()}. 
+                ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`;
+                setTimeout(init_clock, 1000);
+            }
+
+
+            function init_menu() {
+                document.querySelectorAll('.menu_item').forEach(function(menu_item) {
+                    menu_item.addEventListener('click', item_clicked);
+                });
+
+                function item_clicked() {  
+                    let actual_item = this;
+                    document.querySelectorAll('.menu_item').forEach(function(menu_item) {
+                        menu_item.classList.remove("active");
+                    });
+                    actual_item.classList.add("active");
+                    
+                    document.querySelectorAll('.section').forEach(function(section) {
+                       section.style.display = "none";
+                    });
+                    document.querySelector('.section_' + actual_item.dataset.menu).style.display = 'block';
+                }
+            }
+
+            
             function feladat_1() {
                 let feladat_1_a = document.getElementById('feladat_1_a');
                 let feladat_1_b = document.getElementById('feladat_1_b');
@@ -210,16 +290,8 @@
             }
 
 
-            function init_clock() {
-                let clock = document.getElementById('clock');
-                let time = new Date();
-                clock.innerHTML = `${time.getFullYear()}. ${time.getUTCMonth()+1}. ${time.getDate()}. 
-                ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`;
-                setTimeout(init_clock, 1000);
-            }
-
-
             init_clock();
+            init_menu();
             feladat_1();
         </script>
     </body>
