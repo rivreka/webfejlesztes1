@@ -196,6 +196,17 @@
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                             <h1 class="h2">3. feladat</h1>
                         </div>
+                        <form class="row" id="feladat_3_form">
+                            <div class="col-3 mb-4">
+                                <input class="form-control" type="text" placeholder="Név" id="feladat_3_nev" required>
+                            </div>
+                            <div class="col-3 mb-4">
+                                <input class="form-control" type="text" minlength="8" maxlength="8" placeholder="Jelszó (csak szám)" id="feladat_3_jelszo" required>
+                            </div>
+                            <div class="col-3 mb-4">
+                                <button type="submit" class="btn btn-primary" id="feladat_3_button">Elküld</button>
+                            </div>
+                        </form>
                     </section>
 
 
@@ -329,12 +340,23 @@
                 });
             }
 
+            function feladat_3() {
+                let nameInput = document.getElementById('feladat_3_nev');
+                let passwordInput = document.getElementById('feladat_3_jelszo');
+
+                document.getElementById('feladat_3_form').addEventListener('submit', function(event) {
+                    event.preventDefault()
+                    console.log(nameInput.value, passwordInput.value);
+                });
+            }
+
 
 
             init_clock();
             init_menu();
             feladat_1();
             feladat_2();
+            feladat_3();
         </script>
     </body>
 </html>
