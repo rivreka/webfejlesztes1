@@ -15,7 +15,7 @@
     <body>
         <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
             <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="./index.html">Webfejlesztés 1</a>
-            
+
             <div class="navbar-nav">
                 <div class="nav-item text-nowrap">
                     <a class="nav-link px-3" href="#">
@@ -37,49 +37,49 @@
                             <li class="nav-item">
                                 <a class="nav-link active menu_item" href="#" data-menu="1">
                                 <span data-feather="home"></span>
-                                1. gomb
+                                1. feladat
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link menu_item" href="#" data-menu="2">
                                 <span data-feather="file"></span>
-                                2. gomb
+                                2. feladat
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link menu_item" href="#" data-menu="3">
                                 <span data-feather="shopping-cart"></span>
-                                3. gomb
+                                3. feladat
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link menu_item" href="#" data-menu="4">
                                 <span data-feather="users"></span>
-                                4. gomb
+                                4. feladat
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link menu_item" href="#" data-menu="5">
                                 <span data-feather="bar-chart-2"></span>
-                                5. gomb
+                                5. feladat
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link menu_item" href="#" data-menu="6">
                                 <span data-feather="layers"></span>
-                                6. gomb
+                                6. feladat
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link menu_item" href="#" data-menu="7">
                                 <span data-feather="file-text"></span>
-                                7. gomb
+                                7. feladat
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link menu_item" href="#" data-menu="8">
                                 <span data-feather="file-text"></span>
-                                8. gomb
+                                8. feladat
                                 </a>
                             </li>
                         </ul>
@@ -181,13 +181,13 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <p>
+                                <p id="feladat_2_szoveg" style="font-size: 15px" color="black">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mauris mi, feugiat vel sagittis eget, dignissim id arcu. Aliquam lectus lacus, ultricies sed tempus in, commodo et lacus. Aenean rutrum venenatis sapien, vel pretium risus pretium id. Maecenas dignissim elit augue, ut euismod neque egestas ac. Proin commodo facilisis nunc non dignissim. Maecenas posuere ultrices ultrices. Nullam blandit dignissim libero, a vestibulum dolor interdum quis. Vivamus luctus dui ipsum, sed tincidunt velit consectetur vel.
                                 </p>
                             </div>
-                            <div class="col-4 d-grid"><button type="button" class="btn btn-primary">Betűméret</button></div>
-                            <div class="col-4 d-grid"><button type="button" class="btn btn-primary">Szín, háttér</button></div>
-                            <div class="col-4 d-grid"><button type="button" class="btn btn-primary">Eltűnés</button></div>
+                            <div class="col-4 d-grid"><button type="button" class="btn btn-primary feladat_2_gomb_1">Betűméret</button></div>
+                            <div class="col-4 d-grid"><button type="button" class="btn btn-primary feladat_2_gomb_2">Szín, háttér</button></div>
+                            <div class="col-4 d-grid"><button type="button" class="btn btn-primary feladat_2_gomb_3">Eltűnés</button></div>
                         </div>
                     </section>
 
@@ -235,14 +235,14 @@
                 </main>
             </div>
         </div>
-        
-        
+
+
         <script src="assets/js/bootstrap.bundle.min.js"></script>
         <script>
             function init_clock() {
                 let clock = document.getElementById('clock');
                 let time = new Date();
-                clock.innerHTML = `${time.getFullYear()}. ${time.getUTCMonth()+1}. ${time.getDate()}. 
+                clock.innerHTML = `${time.getFullYear()}. ${time.getUTCMonth()+1}. ${time.getDate()}.
                 ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`;
                 setTimeout(init_clock, 1000);
             }
@@ -253,21 +253,25 @@
                     menu_item.addEventListener('click', item_clicked);
                 });
 
-                function item_clicked() {  
+                function item_clicked() {
                     let actual_item = this;
                     document.querySelectorAll('.menu_item').forEach(function(menu_item) {
                         menu_item.classList.remove("active");
                     });
                     actual_item.classList.add("active");
-                    
+
                     document.querySelectorAll('.section').forEach(function(section) {
                        section.style.display = "none";
                     });
+
+                    //actual_item = megkattintott elem
+                    //actual_item.dataset = megkattintott elemen olyan attributumok listája ami "data-" kezdetűek
+                    //actual_item.dataset.menu = megkattintott elem olyan attributuma ami "data-menu" értékét adja vissza (pl.: "2")
                     document.querySelector('.section_' + actual_item.dataset.menu).style.display = 'block';
                 }
             }
 
-            
+
             function feladat_1() {
                 let feladat_1_a = document.getElementById('feladat_1_a');
                 let feladat_1_b = document.getElementById('feladat_1_b');
@@ -280,10 +284,10 @@
                 let feladat_1_eredmeny_7 = document.getElementById('feladat_1_eredmeny_7');
                 let feladat_1_eredmeny_8 = document.getElementById('feladat_1_eredmeny_8');
                 let feladat_1_eredmeny_9 = document.getElementById('feladat_1_eredmeny_9');
-            
+
                 feladat_1_a.addEventListener('keyup', feladat_1_szamolas);
                 feladat_1_b.addEventListener('keyup', feladat_1_szamolas);
-                
+
                 function feladat_1_szamolas() {
                     if(feladat_1_a.value && feladat_1_b.value) {
                         feladat_1_eredmeny_1.value = (parseInt(feladat_1_a.value) + parseInt(feladat_1_b.value));
@@ -299,16 +303,38 @@
                 }
             }
 
-
+            //JS megoldás a 2. feladatra.
             function  feladat_2() {
-                
-                document.querySelector('.section_' + actual_item.dataset.menu).style.display = 'block';
+                document.querySelector('.feladat_2_gomb_1').addEventListener('click', function() {
+                    document.getElementById('feladat_2_szoveg').style.backgroundColor = "white";
+                    document.getElementById('feladat_2_szoveg').style.color = "black";
+                    document.getElementById('feladat_2_szoveg').style.fontSize = '23px';
+                });
+
+                document.querySelector('.feladat_2_gomb_2').addEventListener('click', function() {
+                    document.getElementById('feladat_2_szoveg').style.fontSize = '15px';
+                    document.getElementById('feladat_2_szoveg').style.display === "block"
+                    document.getElementById('feladat_2_szoveg').style.backgroundColor = "blue";
+                    document.getElementById('feladat_2_szoveg').style.color = "white";
+                });
+
+                document.querySelector('.feladat_2_gomb_3').addEventListener('click', function() {
+                    document.getElementById('feladat_2_szoveg').style.backgroundColor = "white";
+                    if (document.getElementById('feladat_2_szoveg').style.display === "block") {
+                        document.getElementById('feladat_2_szoveg').style.display = "none";
+                    } else {
+                        document.getElementById('feladat_2_szoveg').style.display = "block";
+                        document.getElementById('feladat_2_szoveg').style.color = "black";
+                    }
+                });
             }
+
 
 
             init_clock();
             init_menu();
             feladat_1();
+            feladat_2();
         </script>
     </body>
 </html>
