@@ -368,12 +368,12 @@
                 });
 
                 document.querySelector('.feladat_2_gomb_3').addEventListener('click', function() {
-                    document.getElementById('feladat_2_szoveg').style.backgroundColor = "white";
                     if (document.getElementById('feladat_2_szoveg').style.display === "block") {
                         document.getElementById('feladat_2_szoveg').style.display = "none";
                     } else {
                         document.getElementById('feladat_2_szoveg').style.display = "block";
                         document.getElementById('feladat_2_szoveg').style.color = "black";
+                        document.getElementById('feladat_2_szoveg').style.backgroundColor = "white";
                     }
                 });
             }
