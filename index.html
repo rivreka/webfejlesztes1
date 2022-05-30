@@ -222,21 +222,21 @@
                             </div>
                             <div class="carousel-inner">
                               <div class="carousel-item active" data-bs-interval="10000">
-                                <img src="kép/penny.JPG" class="d-block w-100" alt="Penny a ragdoll">
+                                <img src="assets/img/penny.JPG" class="d-block w-100" alt="Penny a ragdoll">
                                 <div class="carousel-caption d-none d-md-block">
                                   <h5>Penny</h5>
                                   <p>Penny egy 1 éves ragdoll cica.</p>
                                 </div>
                               </div>
                               <div class="carousel-item" data-bs-interval="2000">
-                                <img src="kép/penny.JPG" class="d-block w-100" alt="Penny mégegyszer">
+                                <img src="assets/img/penny.JPG" class="d-block w-100" alt="Penny mégegyszer">
                                 <div class="carousel-caption d-none d-md-block">
                                   <h5>Mégegy Penny</h5>
                                   <p>Penny egy blue bicolor ragdoll.</p>
                                 </div>
                               </div>
                               <div class="carousel-item">
-                                <img src="kép/penny.JPG" class="d-block w-100" alt="Ő vajon ki?">
+                                <img src="assets/img/penny.JPG" class="d-block w-100" alt="Ő vajon ki?">
                                 <div class="carousel-caption d-none d-md-block">
                                   <h5>Harmadik Penny</h5>
                                   <p>Penny a Mirumkitty tenyészetből való.</p>
@@ -259,6 +259,30 @@
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                             <h1 class="h2">5. feladat</h1>
                         </div>
+                        <form id="feladat_5_form">
+                            <div class="row">
+                                <div class="col-3 mb-4">
+                                    <input class="form-control" type="text" placeholder="Hosszúság" id="feladat_5_hosszusag" required>
+                                </div>
+                                <div class="col-3 mb-4">
+                                    <input class="form-control" type="text" placeholder="Szélesség" id="feladat_5_szelesseg" required>
+                                </div>
+                                <div class="col-3 mb-4">
+                                    <input class="form-control" type="text" placeholder="Pontok száma" id="feladat_5_pontok" required>
+                                </div>
+                            </div>
+                            <div id="feladat_5_koordinatak">
+
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <svg id="svg">
+                                        <polygon id="polygon" points=""
+                                            style="fill:lime;stroke:purple;stroke-width:1;border:1px solid gray;" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </form>
                     </section>
 
 
@@ -389,12 +413,71 @@
             }
 
 
+            function feladat_5() {
+                let szelessegInput = document.getElementById('feladat_5_szelesseg');
+                let hosszusagInput = document.getElementById('feladat_5_hosszusag');
+                let pontokInput = document.getElementById('feladat_5_pontok');
+                let koordinatak = document.getElementById('feladat_5_koordinatak');
+
+                pontokInput.addEventListener('keyup', feladat_5_form);
+
+                function feladat_5_form() {
+                    let html ='';
+                    let row = `
+                        <div class="row">
+                            <div class="col-3 mb-4">
+                                {ID}. pont koordinátái
+                            </div>
+                            <div class="col-3 mb-4">
+                                <input class="form-control" type="text" placeholder="X" id="feladat_5_{ID}_x" required>
+                            </div>
+                            <div class="col-3 mb-4">
+                                <input class="form-control" type="text" placeholder="Y" id="feladat_5_{ID}_y" required>
+                            </div>
+                        </div> `;
+
+                    for (let i = 1; i <= parseInt(pontokInput.value); i++) {
+                        html += row.replaceAll('{ID}', i);
+                    }
+
+                    koordinatak.innerHTML = html;
+
+                    for (let i = 1; i <= parseInt(pontokInput.value); i++) {
+                        document.getElementById('feladat_5_' + i + '_x').addEventListener('keyup', feladat_5_svg);
+                        document.getElementById('feladat_5_' + i + '_y').addEventListener('keyup', feladat_5_svg);
+                    }
+                }
+
+                function feladat_5_svg() {
+                    let points = '';
+                    let buildable = true;
+                    let svg = document.getElementById('svg');
+                    svg.setAttribute('width', szelessegInput.value);
+                    svg.setAttribute('height', hosszusagInput.value);
+
+                    for (let i = 1; i <= parseInt(pontokInput.value); i++) {
+                        if(document.getElementById('feladat_5_' + i + '_x').value && document.getElementById('feladat_5_' + i + '_y').value) {
+                            points += document.getElementById('feladat_5_' + i + '_x').value + ',' +
+                                      document.getElementById('feladat_5_' + i + '_y').value + ' ';
+                        } else {
+                            buildable = false;
+                        }
+                    }
+
+                    if(buildable) {
+                        polygon.setAttribute('points', points);
+                    }
+                }
+            }
+
+
 
             init_clock();
             init_menu();
             feladat_1();
             feladat_2();
             feladat_3();
+            feladat_5();
         </script>
     </body>
 </html>
